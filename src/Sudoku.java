@@ -5,18 +5,16 @@ public class Sudoku {
         boolean hasEmptyCell = false;
             for (int r = 0; r < 9; r++) {
                 for (int c = 0; c < 9; c++) {
-                    if (a[r][c] == 0) {
+                    if (!hasEmptyCell && a[r][c] == 0) {
                         for (int elem = 1; elem <= 9; elem++) {
                             if (GFG.isSafe(a, r, c, elem)) {
                                 a[r][c] = elem;
                                 boolean solved = solve(a);
-                                if (!solved) {
+                                if (solved) {
+                                    return true;
+                                } else {
                                     a[r][c] = 0;
                                 }
-//                                System.out.println("\n");
-//                                print(a);
-//                                combinations++;
-//                                System.out.println("current combination is: " + combinations);
                             }
                         }
                         hasEmptyCell = true;
