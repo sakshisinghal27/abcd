@@ -15,6 +15,10 @@ public class Sudoku {
                                 } else {
                                     a[r][c] = 0;
                                 }
+//                                System.out.println("\n");
+//                                print(a);
+//                                combinations++;
+//                                System.out.println("current combination is: " + combinations);
                             }
                         }
                         hasEmptyCell = true;
